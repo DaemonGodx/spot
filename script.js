@@ -23,7 +23,6 @@ async function getsongs(folder) {
 
 async function getfolders() {
     let a = await fetch(`/songs/`);
-    console.log(a);
     let folders = await a.text();
     let div = document.createElement("div");
     div.innerHTML = folders;
@@ -32,6 +31,7 @@ async function getfolders() {
     for (let y of x) {
         arr.push(y);
     }
+    console.log(arr);
     let folderList = document.querySelector(".cards");
     folderList.innerHTML = "";
     for (let i = 1; i < arr.length; i++) {
