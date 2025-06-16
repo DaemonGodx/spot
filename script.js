@@ -36,7 +36,7 @@ async function getfolders() {
         let a = await fetch(`/songs/${folderName}/info.json`);
         let response = await a.json();
         folderList.innerHTML += `<div class="playlist" data-folder="${folderName}">
-                <img  class="cover" src="/songs/${folderName}/cover.jpg" alt="Playlist Cover">
+                <img  class="cover" src="./songs/${folderName}/cover.jpg" alt="Playlist Cover">
                 <p>${response.title},${response.artist}</p>
         </div>`
     }
@@ -69,13 +69,13 @@ async function main() {
                     <img src="images/deco/music.svg" alt="">
                     <p style="overflow:hidden; width:60%; max-height:90%; background-color: #191818;">${sname}</p>
                     <span style="margin-left: auto; display: flex; justify-content: center; align-items: center; background-color: #191818;">
-                        Play <img src="images/button/paly.svg" alt="">
+                        Play <img src="./images/button/paly.svg" alt="">
                     </span>
                 </li>`;
                 }
                 audio.src = songarray[0].href;
                 audio.play();
-                playButton.innerHTML = '<img src="images/button/pause.svg" alt="">';
+                playButton.innerHTML = '<img src="./images/button/pause.svg" alt="">';
                 let songs = document.querySelectorAll(".songList ul li");
                 songs[0].classList.add("playing");
                 songs.forEach((song, index) => {
@@ -84,7 +84,7 @@ async function main() {
                         currentindex = index;
                         audio.src = songarray[currentindex].href;
                         audio.play();
-                        playButton.innerHTML = '<img src="images/button/pause.svg" alt="">';
+                        playButton.innerHTML = '<img src="./images/button/pause.svg" alt="">';
                         songs.forEach(s => s.classList.remove("playing"));
                         song.classList.add("playing");
 
@@ -100,10 +100,10 @@ async function main() {
         if (audio.src) {
             if (audio.paused) {
                 audio.play();
-                playButton.innerHTML = '<img src="images/button/pause.svg" alt="">';
+                playButton.innerHTML = '<img src="./images/button/pause.svg" alt="">';
             } else {
                 audio.pause();
-                playButton.innerHTML = '<img src="images/button/paly.svg" alt="">';
+                playButton.innerHTML = '<img src="./images/button/paly.svg" alt="">';
             }
         }
     });
@@ -126,7 +126,7 @@ async function main() {
             seekBar.value = 0;
             audio.src = songarray[currentindex].href;
             audio.play();
-            playButton.innerHTML = '<img src="images/button/pause.svg" alt="">';
+            playButton.innerHTML = '<img src="./images/button/pause.svg" alt="">';
 
             let allSongs = document.querySelectorAll(".songList ul li");
             allSongs.forEach(s => s.classList.remove("playing"));
@@ -141,7 +141,7 @@ async function main() {
             seekBar.value = 0;
             audio.src = songarray[currentindex].href;
             audio.play();
-            playButton.innerHTML = '<img src="images/button/pause.svg" alt="">';
+            playButton.innerHTML = '<img src="./images/button/pause.svg" alt="">';
 
             let allSongs = document.querySelectorAll(".songList ul li");
             allSongs.forEach(s => s.classList.remove("playing"));
@@ -177,9 +177,9 @@ volumeBar.addEventListener("input", () => {
 
     if (volume > 0) {
         lastVolume = volume; 
-        muteButton.innerHTML = '<img src="images/button/volume.svg" alt="Volume">';
+        muteButton.innerHTML = '<img src="./images/button/volume.svg" alt="Volume">';
     } else {
-        muteButton.innerHTML = '<img src="images/button/mute.svg" alt="Muted">';
+        muteButton.innerHTML = '<img src="./images/button/mute.svg" alt="Muted">';
     }
 });
 
@@ -188,11 +188,11 @@ muteButton.addEventListener("click", () => {
         lastVolume = audio.volume; 
         audio.volume = 0;
         volumeBar.value = 0;
-        muteButton.innerHTML = '<img src="images/button/mute.svg" alt="Muted">';
+        muteButton.innerHTML = '<img src="./images/button/mute.svg" alt="Muted">';
     } else {
         audio.volume = lastVolume;
         volumeBar.value = lastVolume * 100;
-        muteButton.innerHTML = '<img src="images/button/volume.svg" alt="Volume">';
+        muteButton.innerHTML = '<img src="./images/button/volume.svg" alt="Volume">';
     }
 });
 audio.addEventListener("timeupdate", () => {
