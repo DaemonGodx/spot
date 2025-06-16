@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav">
+        <img src="images/logo.svg" alt="" style="height:38px; " class="logo" >
+        <img src="images/button/hamburger.svg" alt="" class="hamburger">
+        <img src="images/button/close.svg" alt="" class="close">
+        <div style="display: flex; align-items: center;  background-color: #191818;">
+            <button class="home-btn" title="Home">
+                <img src="images/button/home.svg" alt="">
+                </button>
+            <input class="searchbar" type="text" placeholder="Search...">
+        </div>
+        <button class="profile-btn" title="Profile">
+            <img src="images/button/profile.svg" alt="">
+        </button>
+    </div>
+    <div class="main" style="display: flex;">
+         <div class="left">
+            <div>
+                 <div style="display: flex;  gap: 2%; background-color: #191818;"><img src="images/library.svg" alt="" style="background-color: #191818;"><h2 style="background-color: #191818";>Your Library</h2></div>
+            </div>
+       
+        <div class="songList">
+            <ul style="padding: 1% ; background-color: #191818;">
+                
+            </ul>
+        </div>
+    </div>
+    <div class="right">
+        <div><h2>Spotify Playlists</h2></div>
+        <div class="cards">
+          
+
+        </div>
+        
+        
+    </div>
+    </div>
+   <div class="controls" style="display: flex; background-color: #191818;">
+     <div class="playbar">
+        <div class="buts" style="display: flex; justify-content: center; align-items: center; gap: 16px; background-color: #191818; ">
+            <button class="prev-btn" title="Prev" style="background-color: #191818; border: none; display: flex; justify-content: center;
+            align-items: center; cursor: pointer; ">
+                <img src="images/button/prev.svg" alt="" >
+            </button>
+            <button class="play-btn" title="Play" style="background-color: #191818; border: none; display: flex; justify-content: center;
+            align-items: center; cursor: pointer; ">
+                <img src="images/button/paly.svg" alt="">
+            </button>
+            <button class="next-btn" title="Next" style="background-color: #191818; border: none; display: flex; justify-content: center;align-items: center; cursor: pointer; ">
+                <img src="images/button/next.svg" alt="" >
+            </button>
+        </div>
+    <div class="time" style="display: flex; align-items: center; gap: 10px; background-color: #191818; justify-content: center;">
+      <input type="range" class="seek-bar" min="0" max="100" value="0">
+      <span class="time-display" style="color: white; font-size: 0.9rem; margin-bottom: 1%;">0:00 / 0:00</span>
+    </div>
+  </div>
+    <div class="volume">
+            <button class="mute-btn" title="Mute" style="background-color: #191818; border: none; display: flex; justify-content: center;
+            align-items: center; cursor: pointer;">
+                <img src="images/button/volume.svg" alt="">
+            </button>
+            <input type="range" class="volume-bar" min="0" max="100" value="100">
+        </div>
+
+    </div>
+  
+   
+    
+</body>
+<script src="script.js"></script>
+</html>
