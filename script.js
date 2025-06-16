@@ -23,6 +23,7 @@ async function getsongs(folder) {
 
 async function getfolders() {
     let a = await fetch(`/songs/`);
+    console.log(a);
     let folders = await a.text();
     let div = document.createElement("div");
     div.innerHTML = folders;
