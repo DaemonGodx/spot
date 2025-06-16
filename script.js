@@ -6,7 +6,7 @@ let ham = document.querySelector(".hamburger");
 let seekBar = document.querySelector(".seek-bar");
 
 async function getsongs(folder) {
-    let a = await fetch(`songs/${encodeURIComponent(folder)}/`);
+    let a = await fetch(`/songs/${encodeURIComponent(folder)}/`);
     let song = await a.text();
     let div = document.createElement("div");
     div.innerHTML = song;
@@ -22,7 +22,7 @@ async function getsongs(folder) {
 }
 
 async function getfolders() {
-    let a = await fetch(`songs/`);
+    let a = await fetch(`/songs/`);
     let folders = await a.text();
     let div = document.createElement("div");
     div.innerHTML = folders;
@@ -35,10 +35,10 @@ async function getfolders() {
     folderList.innerHTML = "";
     for (let i = 1; i < arr.length; i++) {
         let folderName = arr[i].textContent.trim();
-        let a = await fetch(`songs/${folderName}/info.json`);
+        let a = await fetch(`/songs/${folderName}/info.json`);
         let response = await a.json();
         folderList.innerHTML += `<div class="playlist" data-folder="${folderName}">
-                <img class="cover" src="songs/${folderName}/cover.jpg" alt="Playlist Cover">
+                <img class="cover" src="/songs/${folderName}/cover.jpg" alt="Playlist Cover">
                 <p>${response.title},${response.artist}</p>
         </div>`;
     }
