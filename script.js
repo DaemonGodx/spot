@@ -34,7 +34,7 @@ async function getfolders() {
     console.log(arr);
     let folderList = document.querySelector(".cards");
     folderList.innerHTML = "";
-    for (let i = 1; i < arr.length; i++) {
+    for (let i = 1; i < arr.length-1; i++) {
         let folderName = arr[i].textContent.trim();
         let a = await fetch(`/songs/${folderName}/info.json`);
         let response = await a.json();
